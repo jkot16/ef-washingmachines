@@ -48,11 +48,16 @@ public class WashingMachineService : IWashingMachineService
 
         var machine = new WashingMachine
         {
-            SerialNumber = request.WashingMachine.SerialNumber,
             MaxWeight = request.WashingMachine.MaxWeight,
+            SerialNumber = request.WashingMachine.SerialNumber,
             AvailablePrograms = request.AvailablePrograms.Select(ap =>
             {
-                var program = programs.First(p => p.Name == ap.ProgramName);
+                var program = programs.FirstOrDefault(p => p.Name == ap.ProgramName);
+
+                if (program == null)
+                {
+                    throw new KeyNotFoundException($"Program {ap.ProgramName} not found.");
+                }
                 return new AvailableProgram
                 {
                     ProgramId = program.ProgramId,
