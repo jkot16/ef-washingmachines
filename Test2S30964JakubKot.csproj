@@ -17,6 +17,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Contracts\Requests\" />
+      <Folder Include="Contracts\Responses\" />
       <Folder Include="Controllers\" />
     </ItemGroup>
 
