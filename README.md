@@ -1,4 +1,4 @@
-# 🧼 Washing Machine API (APBD Test 2)
+# Washing Machine API (APBD Test 2)
 
 REST API for managing washing machines and customer purchases using **ASP.NET Core** and **EF Core** with a **Code First** approach.
 
